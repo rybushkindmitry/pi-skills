@@ -1,6 +1,6 @@
 {
   "name": "rybushkindmitry-pi-skills",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Personal collection of Pi skills: repo documentation culture (ADR / facts-vs-plans split / implementation status)",
   "keywords": ["pi-package"],
   "license": "MIT",

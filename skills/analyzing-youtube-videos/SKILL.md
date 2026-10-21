@@ -1,6 +1,6 @@
 ---
 name: analyzing-youtube-videos
-description: Use when the user gives a YouTube/video URL and asks to study, digest, summarize it, or save a summary into a knowledge base — especially when what is shown on screen (slides, demos, diagrams) matters, not just the spoken track. Триггеры: «изучи видео», «обработай видео», «посмотри ролик», «сделай конспект видео», ссылка youtube.com/watch или youtu.be.
+description: "Use when the user gives a YouTube/video URL and asks to study, digest, summarize it, or save a summary into a knowledge base — especially when what is shown on screen (slides, demos, diagrams) matters, not just the spoken track. Триггеры: «изучи видео», «обработай видео», «посмотри ролик», «сделай конспект видео», ссылка youtube.com/watch или youtu.be."
 ---
 
 # Analyzing YouTube Videos
