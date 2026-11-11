@@ -1,6 +1,6 @@
 ---
 name: structuring-repo-documentation
-description: Use when recording an accepted architecture decision in a repository, creating or updating ADRs, when asked to "document this decision" or "update the docs", when a README grows a status/changelog section, or when facts and plans are mixed in the same documentation files.
+description: Use when recording an accepted architecture decision in a repository, creating or updating ADRs, when asked to "document this decision" or "update the docs", when a README grows a status/changelog section, when facts and plans are mixed in the same documentation files, or when the code and the ADR journal disagree.
 ---
 
 # Structuring Repo Documentation
@@ -35,6 +35,18 @@ description: Use when recording an accepted architecture decision in a repositor
 В индексе журнала (README): «извлечено YYYY-MM-DD из <источники>» — фактическая
 дата запуска извлечения, а не выдуманная дата «происхождения» решений.
 
+## Конфликт кода и ADR
+
+Код расходится с принятым ADR — не решай за источники, кто «неверен»: код — это
+состояние деплоя, ADR — зафиксированное решение. Порядок один:
+
+1. Сообщи о расхождении и проверь свежесть по git (кто из них новее и почему).
+2. Если решение изменилось — предложи **новый** ADR с `supersedes`, а не правку
+   старого и не молчаливое следование одной из сторон.
+3. Никогда не откатывай код под устаревший ADR и не объявляй рабочий код
+   «дрейфом» без доказательств: коммит миграции с обоснованием — намеренное
+   решение, а не ошибка.
+
 ## When to Use
 
 - принятое архитектурное решение нужно зафиксировать («мы решили X», «отказались от Y»)
@@ -52,6 +64,7 @@ description: Use when recording an accepted architecture decision in a repositor
 | Отредактировать принятый ADR по новому поводу | `supersedes` новым файлом; уточнение фактов — датированная ревизия в шапке |
 | Дата решения «на глаз» («примерно тогда, когда писали спеку») | дата — только из git-метаданных коммита или имени файла; иначе «неизвестна (не позднее …)» |
 | Намерение из спеки записано как действующее | отдельный слот «статус реализации»: реализовано / частично / не найдено в коде на дату среза |
+| Код разошёлся с ADR → откатить код или переписать ADR молча | сообщить о расхождении, проверить свежесть по git, новый ADR с `supersedes` |
 
 ## Red Flags — STOP
 
